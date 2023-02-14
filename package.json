@@ -1,0 +1,31 @@
+{
+  "name": "mern-todo",
+  "version": "1.0.0",
+  "description": "server for todo app using node, express and mongodb",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/StaceyLouis/mern-todo-backend.git"
+  },
+  "keywords": [],
+  "author": "Stacey Louis",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/StaceyLouis/mern-todo-backend/issues"
+  },
+  "homepage": "https://github.com/StaceyLouis/mern-todo-backend#readme",
+  "dependencies": {
+    "body-parser": "^1.20.1",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "mongodb": "^5.0.1",
+    "mongoose": "^6.9.1",
+    "morgan": "^1.10.0"
+  }
+}
