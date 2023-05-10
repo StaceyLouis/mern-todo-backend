@@ -7,6 +7,8 @@ const cookieParser = require('cookie-parser');
 const app = express()
 
 const todoRouter = require('./routes/todo')
+const userRouter = require('./routes/signup')
+const signInRouter = require("./routes/signin")
 
 const PORT = process.env.PORT || 8080
 
@@ -17,6 +19,8 @@ app.use(cookieParser());
 app.use(logger('dev'));
 
 app.use('/todos', todoRouter)
+app.use('/signup', userRouter)
+app.use("/signin", signInRouter )
 const string = process.env.MONGO_URI
 mongoose.connect(string)
 
