@@ -15,7 +15,7 @@ router.all((req,res, next)=>{
                 res.send({message: "login success", user: user})
 
             }else {
-                res.send({message: "invalid email or passwor, please try again"})
+                res.send({message: "invalid email or password, please try again"})
             }
 
         }

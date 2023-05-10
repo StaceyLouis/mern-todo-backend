@@ -1,6 +1,6 @@
 const express = require("express")
 const router = express.Router()
-const Model = require('../models/signup')
+const User = require('../models/signup')
 
 router.all((req,res, next)=>{
     res.statusCode = 200
