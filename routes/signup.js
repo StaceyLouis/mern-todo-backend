@@ -7,7 +7,7 @@ router.all((req,res, next)=>{
     res.setHeader("Content-Type", "text/plain")
     next()
 })
-.post("/", (req,res)=>{
+.post("/",  (req,res)=>{
     console.log(req.body) 
     const {name,email,password} =req.body;
     User.findOne({email:email},(err,user)=>{
@@ -27,3 +27,5 @@ router.all((req,res, next)=>{
 
 
 }) 
+
+module.exports = router
