@@ -26,16 +26,13 @@ router.all((req, res, next) => {
     }
 })
 .post('/', async (req, res) => {
-    const data = new Model({
-       title: req.body.title,
-        checked: req.body.checked
-    });
-    try {
-        const saveData = await data.save();
-        res.status(200).json(saveData);
-    } catch (err) {
-        res.status(400).json({ message: err.message });
-    }
+try{
+    const newTask = new Model(req.body)
+    await newTask.save()
+    res.status(201).json(newTask)
+} catch (error) {
+    res.status(400).json({message: error.message})
+}
 })
 .put("/:id", async (req, res) => {
     const id = req.params.id;
