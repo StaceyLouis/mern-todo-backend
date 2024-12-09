@@ -9,8 +9,7 @@ const todoSchema = new mongoose.Schema({
     }
 }, {collection: "posts"})
 
-const MyModel = mongoose.model("Todo", todoSchema)
 
-module.exports = MyModel
+module.exports = mongoose.model("Todo", todoSchema)
 
 
