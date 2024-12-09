@@ -4,6 +4,7 @@ const cors = require("cors")
 const logger = require("morgan")
 const mongoose = require("mongoose")
 const cookieParser = require('cookie-parser');
+const bodyParser = require('body-parser');
 const app = express()
 
 const todoRouter = require('./routes/todo')
@@ -17,6 +18,7 @@ app.use(cors())
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(logger('dev'));
+app.use(bodyParser.json());
 
 app.use('/todos', todoRouter)
 app.use('/signup', userRouter)
