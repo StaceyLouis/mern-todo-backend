@@ -18,7 +18,7 @@ app.use(logger('dev'));
 
 app.use('/todos', todoRouter)
 const string = process.env.MONGO_URI
-mongoose.connect(string)
+mongoose.connect(string, { useNewUrlParser: true, useUnifiedTopology: true });
 
 const database = mongoose.connection
 database.on('error:', error=>{
