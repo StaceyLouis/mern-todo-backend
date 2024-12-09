@@ -5,7 +5,8 @@ const todoSchema = new mongoose.Schema({
         type: String
     },
     checked:{
-        type: Boolean
+        type: Boolean,
+        default: false
     }
 }, {collection: "posts"})
 
