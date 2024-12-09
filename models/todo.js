@@ -1,13 +1,31 @@
 const mongoose = require("mongoose")
 
 const todoSchema = new mongoose.Schema({
-    post:{
+    title:{
         required: true,
         type: String
     },
     checked:{
         type: Boolean
     }
-})
+}, {collection: "posts"})
 
-module.exports = mongoose.model("Todo", todoSchema)
+const MyModel = mongoose.model("Todo", todoSchema)
+
+module.exports = MyModel
+
+for (let i = 1; i <= 10; i++) {
+    const newDocument = new MyModel({
+        title: `Task ${i}`,
+        checked: false
+    });
+
+    newDocument.save(err => {
+        if (err) {
+            console.log(err);
+        } else {
+            console.log(`Document ${i} saved`);
+        }
+    });
+}
+
