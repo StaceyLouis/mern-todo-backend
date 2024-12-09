@@ -27,7 +27,7 @@ router.all((req, res, next) => {
 })
 .post('/', async (req, res) => {
     const data = new Model({
-        post: req.body.post,
+       title: req.body.title,
         checked: req.body.checked
     });
     try {
@@ -42,7 +42,7 @@ router.all((req, res, next) => {
     const query = { _id: id };
     const update = {
         "$set": {
-            "post": req.body.post,
+            "title": req.body.title,
             "checked": req.body.checked
         }
     };
